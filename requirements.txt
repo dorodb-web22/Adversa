@@ -1,0 +1,6 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.10
+requests>=2.32
+gradio>=5.0
+pandas>=2.0
