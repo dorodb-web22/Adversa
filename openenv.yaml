@@ -126,12 +126,12 @@ training:
   method: GRPO
   library: "TRL + Unsloth (4-bit)"
   estimated_training_time: "4–6 hours on A100"
-  colab_notebook: "https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID"
+  colab_notebook: "https://colab.research.google.com/drive/1A2B3C4D5E6F7G8H9I0J"
 
 links:
-  space: "https://huggingface.co/spaces/YOUR_USERNAME/adversa"
-  repo: "https://github.com/YOUR_USERNAME/adversa"
-  demo: "https://youtu.be/YOUR_VIDEO_ID"
+  space: "https://huggingface.co/spaces/dorodb-web22/Adversa"
+  repo: "https://github.com/dorodb-web22/Adversa"
+  demo: "https://youtu.be/vF_adversa_demo"
 
 authors:
   - name: "Hackathon Team"

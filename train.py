@@ -34,7 +34,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # ── CHANGE THIS to your deployed HF Space URL ────────────────────────────────
-ENV_URL = "https://YOUR_USERNAME-adversa.hf.space"
+ENV_URL = "https://dorodb-web22-Adversa.hf.space"
 
 # Training config
 MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"

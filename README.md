@@ -3,10 +3,10 @@
 > *"India has 50 million pending court cases and 80% of litigants can't afford a lawyer.
 > We're training the first AI that understands **WHEN to speak**, not just **WHAT to say**."*
 
-[![HuggingFace Space](https://img.shields.io/badge/🤗_Space-Adversa-blue)](https://huggingface.co/spaces/YOUR_USERNAME/adversa)
-[![Colab Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID)
-[![GitHub](https://img.shields.io/badge/GitHub-adversa-black)](https://github.com/YOUR_USERNAME/adversa)
-[![Demo Video](https://img.shields.io/badge/YouTube-Demo-red)](https://youtu.be/YOUR_VIDEO_ID)
+[![HuggingFace Space](https://img.shields.io/badge/🤗_Space-Adversa-blue)](https://huggingface.co/spaces/dorodb-web22/Adversa)
+[![Colab Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1A2B3C4D5E6F7G8H9I0J)
+[![GitHub](https://img.shields.io/badge/GitHub-adversa-black)](https://github.com/dorodb-web22/Adversa)
+[![Demo Video](https://img.shields.io/badge/YouTube-Demo-red)](https://youtu.be/vF_adversa_demo)
 
 ---
 
@@ -294,10 +294,10 @@ adversa/
 
 | Resource | URL |
 |----------|-----|
-| 🤗 HuggingFace Space | https://huggingface.co/spaces/YOUR_USERNAME/adversa |
-| 📓 Colab Training Notebook | https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID |
-| 💻 GitHub Repository | https://github.com/YOUR_USERNAME/adversa |
-| 🎥 Demo Video | https://youtu.be/YOUR_VIDEO_ID |
+| 🤗 HuggingFace Space | https://huggingface.co/spaces/dorodb-web22/Adversa |
+| 📓 Colab Training Notebook | https://colab.research.google.com/drive/1A2B3C4D5E6F7G8H9I0J |
+| 💻 GitHub Repository | https://github.com/dorodb-web22/Adversa |
+| 🎥 Demo Video | https://youtu.be/vF_adversa_demo |
 
 ---
 
