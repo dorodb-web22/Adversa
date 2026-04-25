@@ -1,0 +1,138 @@
+name: adversa
+version: "1.0.0"
+description: >
+  Multi-agent adversarial courtroom trial simulation environment.
+  Trains LLMs to learn strategic argumentation under information asymmetry:
+  WHEN to present evidence, WHICH juror to target, WHEN to object.
+
+tags:
+  - multi-agent
+  - adversarial
+  - long-horizon
+  - legal
+  - theory-of-mind
+  - india
+
+themes:
+  - "Theme #1: Multi-Agent Interactions"
+  - "Theme #2: Long-Horizon Planning"
+  - "Theme #4: Self-Improvement (adversarial self-play)"
+
+server:
+  type: fastapi
+  port: 7860
+  health_endpoint: /health
+  reset_endpoint: /reset
+  step_endpoint: /step
+  state_endpoint: /state
+
+endpoints:
+  reset:
+    method: POST
+    path: /reset
+    body:
+      seed: int
+      options:
+        case_id: "string (C1–C10, optional)"
+        role: "string (prosecutor|defense|judge, default: defense)"
+    returns: observation
+
+  step:
+    method: POST
+    path: /step
+    body:
+      action:
+        role: string
+        action_type: "string (present_evidence|object|cross_examine|closing_argument|opening_statement|pass)"
+        evidence_id: "string (optional, for present_evidence)"
+        framing: "string (factual|emotional|authority, optional)"
+        objection_type: "string (hearsay|relevance|coerced|leading, optional)"
+        target: "string (optional)"
+        argument_text: "string (optional)"
+    returns:
+      observation: dict
+      reward: float
+      done: bool
+      info: dict
+
+  state:
+    method: GET
+    path: /state
+    returns: full_internal_state
+
+environment:
+  observation_space:
+    role: string
+    phase: "string (opening|prosecution_case|defense_case|closing|verdict)"
+    step: int
+    max_steps: 30
+    my_evidence: "list[Evidence] — role-specific hidden evidence"
+    public_record: "list[RecordEntry] — all public arguments"
+    jury_sentiment:
+      analytical: float
+      empathetic: float
+      skeptical: float
+    last_opponent_action: "dict | null"
+    available_actions: list[string]
+    objection_pending: "dict | null — judge only"
+
+  action_space:
+    phase_actions:
+      opening: ["opening_statement", "pass"]
+      prosecution_case:
+        prosecutor: ["present_evidence", "pass"]
+        defense: ["object", "cross_examine", "pass"]
+      defense_case:
+        defense: ["present_evidence", "pass"]
+        prosecutor: ["object", "cross_examine", "pass"]
+      closing: ["closing_argument", "pass"]
+      verdict:
+        judge: ["instruct_jury", "pass"]
+
+  reward:
+    verdict_reward: "+5.0 win & correct | +2.0 win & wrong | -2.0 lose & wrong | -5.0 lose & correct"
+    jury_persuasion: "0.3 × sentiment_shift per juror per step"
+    evidence_timing: "+0.8 for presenting strong evidence (strength>0.7) 3rd or later"
+    procedural_violation: "-0.5 per violation"
+    successful_objection: "+0.2 per valid objection raised"
+
+  episodes:
+    cases: 10
+    seeds_per_case: 1000
+    total_unique_episodes: 10000
+    steps_per_episode: 30
+
+tasks:
+  - id: adversa_easy
+    name: "First Chair (Easy)"
+    difficulty: easy
+    cases: [C5, C7]
+    role: defense
+
+  - id: adversa_medium
+    name: "Strategic Counsel (Medium)"
+    difficulty: medium
+    cases: [C1, C3, C9]
+    role: defense
+
+  - id: adversa_hard
+    name: "Master Litigator (Hard)"
+    difficulty: hard
+    cases: [C2, C4, C10]
+    role: defense
+
+training:
+  recommended_model: "Qwen/Qwen2.5-3B-Instruct"
+  method: GRPO
+  library: "TRL + Unsloth (4-bit)"
+  estimated_training_time: "4–6 hours on A100"
+  colab_notebook: "https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID"
+
+links:
+  space: "https://huggingface.co/spaces/YOUR_USERNAME/adversa"
+  repo: "https://github.com/YOUR_USERNAME/adversa"
+  demo: "https://youtu.be/YOUR_VIDEO_ID"
+
+authors:
+  - name: "Hackathon Team"
+    affiliation: "OpenEnv India Finale 2026"

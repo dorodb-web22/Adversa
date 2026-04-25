@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.venv
+venv/
+*.egg-info/
+adversa-trained/
+adversa-final/
+plots/
+.DS_Store
+adversa_transfer/
