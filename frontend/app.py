@@ -5,8 +5,8 @@ import pandas as pd
 import time
 from datetime import datetime
 
-# You will replace this with your actual HF Space URL or local FastAPI URL
-API_URL = "http://localhost:7860"
+# URL of the backend FastAPI server
+API_URL = "http://localhost:8000"
 
 def init_state():
     return {
@@ -522,5 +522,5 @@ with gr.Blocks(title="Adversa Legal Simulator", css=css, theme=gr.themes.Default
     )
 
 if __name__ == "__main__":
-    print("Starting Adversa Gradio Dashboard...")
-    app.launch(server_name="0.0.0.0", server_port=7865)
+    print("Starting Adversa Gradio Dashboard on port 7860...")
+    app.launch(server_name="0.0.0.0", server_port=7860)

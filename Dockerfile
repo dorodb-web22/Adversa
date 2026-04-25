@@ -5,7 +5,7 @@ ENV PORT=7860
 WORKDIR /app
 
 # Install dependencies
-COPY server/requirements.txt ./requirements.txt
+COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
@@ -14,9 +14,11 @@ COPY tasks.py ./tasks.py
 COPY client.py ./client.py
 COPY inference.py ./inference.py
 COPY server/ ./server/
+COPY frontend/ ./frontend/
+COPY run.sh ./run.sh
 
 # Expose port
 EXPOSE 7860
 
 # Start server
-CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["./run.sh"]
