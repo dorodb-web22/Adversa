@@ -1,3 +1,14 @@
+---
+title: Adversa
+emoji: ⚖️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
+
 # ⚖️ Adversa — Multi-Agent Adversarial Courtroom Environment
 
 > *"India has 50 million pending court cases and 80% of litigants can't afford a lawyer.
