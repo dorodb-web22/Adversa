@@ -12,7 +12,7 @@ BACKEND_PID=$!
 # Wait until backend is healthy
 echo "      Waiting for backend to be ready..."
 for i in {1..20}; do
-    if curl -s http://localhost:8000/health > /dev/null 2>&1; then
+    if curl -s http://127.0.0.1:8000/health > /dev/null 2>&1; then
         echo "      ✅ Backend ready!"
         break
     fi
