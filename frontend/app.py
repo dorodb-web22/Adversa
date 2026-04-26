@@ -5,8 +5,8 @@ import pandas as pd
 import time
 from datetime import datetime
 
-# URL of the backend FastAPI server
-API_URL = "http://0.0.0.0:8000"
+# URL of the backend FastAPI server (same container, internal)
+API_URL = "http://127.0.0.1:8000"
 
 def init_state():
     return {
@@ -462,7 +462,7 @@ with gr.Blocks(title="Adversa Legal Simulator", css=css, theme=gr.themes.Default
             # Action controls
             with gr.Group(elem_classes=["panel"]):
                 gr.Markdown("### Your Turn")
-                action_type = gr.Dropdown(choices=["pass"], label="Action Type")
+                action_type = gr.Dropdown(choices=["pass"], value="pass", label="Action Type")
                 
                 with gr.Row():
                     evidence_id = gr.Dropdown(choices=[], label="Evidence to Present", visible=False)
