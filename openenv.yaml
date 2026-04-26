@@ -129,8 +129,8 @@ training:
   colab_notebook: "https://colab.research.google.com/drive/1A2B3C4D5E6F7G8H9I0J"
 
 links:
-  space: "https://huggingface.co/spaces/dorodb-web22/Adversa"
-  repo: "https://github.com/dorodb-web22/Adversa"
+  space: "https://huggingface.co/spaces/dorare22/Adversa"
+  repo: "https://github.com/dorare22/Adversa"
   demo: "https://youtu.be/vF_adversa_demo"
 
 authors:

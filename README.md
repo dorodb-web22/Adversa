@@ -8,15 +8,15 @@ app_file: app.py
 pinned: false
 ---
 
-
+LinkedIn Rakhi
 # ⚖️ Adversa — Multi-Agent Adversarial Courtroom Environment
 
 > *"India has 50 million pending court cases and 80% of litigants can't afford a lawyer.
 > We're training the first AI that understands **WHEN to speak**, not just **WHAT to say**."*
 
-[![HuggingFace Space](https://img.shields.io/badge/🤗_Space-Adversa-blue)](https://huggingface.co/spaces/dorodb-web22/Adversa)
+[![HuggingFace Space](https://img.shields.io/badge/🤗_Space-Adversa-blue)](https://huggingface.co/spaces/dorare22/Adversa)
 [![Colab Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1A2B3C4D5E6F7G8H9I0J)
-[![GitHub](https://img.shields.io/badge/GitHub-adversa-black)](https://github.com/dorodb-web22/Adversa)
+[![GitHub](https://img.shields.io/badge/GitHub-adversa-black)](https://github.com/dorare22/Adversa)
 [![Demo Video](https://img.shields.io/badge/YouTube-Demo-red)](https://youtu.be/vF_adversa_demo)
 
 ---
@@ -305,9 +305,9 @@ adversa/
 
 | Resource | URL |
 |----------|-----|
-| 🤗 HuggingFace Space | https://huggingface.co/spaces/dorodb-web22/Adversa |
+| 🤗 HuggingFace Space | https://huggingface.co/spaces/dorare22/Adversa |
 | 📓 Colab Training Notebook | https://colab.research.google.com/drive/1A2B3C4D5E6F7G8H9I0J |
-| 💻 GitHub Repository | https://github.com/dorodb-web22/Adversa |
+| 💻 GitHub Repository | https://github.com/dorare22/Adversa |
 | 🎥 Demo Video | https://youtu.be/vF_adversa_demo |
 
 ---
