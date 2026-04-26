@@ -187,11 +187,13 @@ def api_reset(case_id, role, seed):
             
             return state, update_ui_from_state(state)
         else:
+            print("API ERROR:", r.status_code, r.text)
             state = init_state()
             state["error"] = f"API Error: {r.status_code} - {r.text}"
             return state, update_ui_error(state["error"])
             
     except Exception as e:
+        print("EXCEPTION:", str(e))
         state = init_state()
         state["error"] = f"Connection Error: {str(e)}"
         return state, update_ui_error(state["error"])
@@ -242,10 +244,12 @@ def api_step(state, action_type, evidence_id, argument_text, framing, objection_
                 
             return state, update_ui_from_state(state)
         else:
+            print("API ERROR:", r.status_code, r.text)
             state["error"] = f"API Error: {r.status_code} - {r.text}"
             return state, update_ui_from_state(state)
             
     except Exception as e:
+        print("EXCEPTION:", str(e))
         state["error"] = f"Connection Error: {str(e)}"
         return state, update_ui_from_state(state)
 
@@ -328,7 +332,7 @@ def bot_step(state):
 def update_ui_error(err_msg):
     # Returns updates for all UI components in an error state
     return (
-        gr.update(value=f"<div style='color:red; font-weight:bold;'>{err_msg}</div>"), # header
+        gr.update(value=f"<pre style='color:red; white-space:pre-wrap'>{err_msg}</pre>"), # header
         gr.update(), # evidence
         gr.update(), # history
         gr.update(), # jury
